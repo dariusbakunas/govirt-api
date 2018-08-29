@@ -6,5 +6,5 @@
     % go build -o govirt-api main.go
     % sudo cp govirt-api /usr/local/bin 
     % sudo cp govirt-api.service /lib/systemd/system/
-    % service govirt-api senable
-    % service govirt-api start
+    % sudo systemctl enable govirt-api
+    % sudo systemctl start govirt-api
