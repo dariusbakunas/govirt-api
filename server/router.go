@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"geekspace.us/govirt-api/controllers"
+	"github.com/dariusbakunas/govirt-api/controllers"
 )
 
 func NewRouter() *gin.Engine {

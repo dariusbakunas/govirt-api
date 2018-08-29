@@ -5,8 +5,8 @@ import (
 	"github.com/akamensky/argparse"
 	"os"
 	"log"
-	"geekspace.us/govirt-api/server"
-	"geekspace.us/govirt-api/models"
+	"github.com/dariusbakunas/govirt-api/models"
+	"github.com/dariusbakunas/govirt-api/server"
 )
 
 func main() {

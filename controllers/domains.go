@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"geekspace.us/govirt-api/models"
+	"github.com/dariusbakunas/govirt-api/models"
 )
 
 type DomainsController struct{}
