@@ -6,10 +6,10 @@ import (
 )
 
 type Domain struct {
-	ID uint
-	Name string
-	UUID string
-	State string
+	ID uint			`json:"id"`
+	Name string		`json:"name"`
+	UUID string		`json:"uuid"`
+	State string	`json:"state"`
 }
 
 func getDomainStateString(state libvirt.DomainState) string {
