@@ -5,6 +5,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
+Environment=GIN_MODE=release
 ExecStart=/usr/local/bin/govirt-api -u xen:/// -p 8888
 
 [Install]
