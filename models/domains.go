@@ -3,10 +3,11 @@ package models
 import (
 	"github.com/libvirt/libvirt-go"
 	"log"
+	"math"
 )
 
 type Domain struct {
-	ID uint			`json:"id"`
+	ID *uint		`json:"id"`
 	Name string		`json:"name"`
 	UUID string		`json:"uuid"`
 	State string	`json:"state"`
@@ -64,10 +65,13 @@ func (d Domain) GetAll() ([]Domain, error) {
 		state, _, err := domain.GetState()
 
 		domains[i] = Domain {
-			ID: id,
 			Name: name,
 			UUID: uuid,
 			State: getDomainStateString(state),
+		}
+
+		if id != math.MaxUint32 {
+			domains[i].ID = &id
 		}
 	}
 
