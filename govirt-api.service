@@ -1,5 +1,5 @@
 [Unit]
-Description=Hello World HTTP
+Description=Libvirt Rest API
 Requires=network.target
 After=multi-user.target
 
