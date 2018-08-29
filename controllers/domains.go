@@ -18,6 +18,6 @@ func (d DomainsController) GetAllDomains(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, gin.H{"domains": domains})
+	c.JSON(200, domains)
 	return
 }
