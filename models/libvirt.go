@@ -4,7 +4,7 @@ import (
 	"github.com/libvirt/libvirt-go"
 )
 
-var libvirtConn *libvirt.Connect;
+var libvirtConn *libvirt.Connect
 
 func InitLibvirt(uri string) (*libvirt.Connect, error) {
 	conn, err := libvirt.NewConnect(uri)

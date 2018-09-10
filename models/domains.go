@@ -7,6 +7,8 @@ import (
 )
 
 type Domain struct {
+	Autostart bool	`json:"autostart"`
+	OSType string	`json:"osType"`
 	ID *uint		`json:"id"`
 	Name string		`json:"name"`
 	UUID string		`json:"uuid"`
@@ -50,6 +52,18 @@ func (d Domain) GetAll() ([]Domain, error) {
 			return nil, err
 		}
 
+		autostart, err := domain.GetAutostart()
+
+		if err != nil {
+			return nil, err
+		}
+
+		osType, err := domain.GetOSType()
+
+		if err != nil {
+			return nil, err
+		}
+
 		id, err := domain.GetID()
 
 		if err != nil {
@@ -65,6 +79,8 @@ func (d Domain) GetAll() ([]Domain, error) {
 		state, _, err := domain.GetState()
 
 		domains[i] = Domain {
+			Autostart: autostart,
+			OSType: osType,
 			Name: name,
 			UUID: uuid,
 			State: getDomainStateString(state),
