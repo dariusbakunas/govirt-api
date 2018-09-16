@@ -10,6 +10,7 @@ type Domain struct {
 	Autostart bool	`json:"autostart"`
 	OSType string	`json:"osType"`
 	ID *uint		`json:"id"`
+	MaxMem uint64	`json:"maxMem"`
 	Name string		`json:"name"`
 	UUID string		`json:"uuid"`
 	State string	`json:"state"`
@@ -78,10 +79,21 @@ func (d Domain) GetAll() ([]Domain, error) {
 
 		state, _, err := domain.GetState()
 
+		if err != nil {
+			return nil, err
+		}
+
+		maxMem, err := domain.GetMaxMemory()
+
+		if err != nil {
+			return nil, err
+		}
+
 		domains[i] = Domain {
 			Autostart: autostart,
 			OSType: osType,
 			Name: name,
+			MaxMem: maxMem,
 			UUID: uuid,
 			State: getDomainStateString(state),
 		}
