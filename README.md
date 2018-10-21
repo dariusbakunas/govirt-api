@@ -5,6 +5,8 @@
 
 # Install as a service
 
+* Check/Update Xen URI in govirt-api.service
+
 * Run these commands:
 
         % go build -o govirt-api main.go
