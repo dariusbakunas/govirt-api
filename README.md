@@ -1,3 +1,8 @@
+# Dependencies
+
+* pkg-config
+* libvirt-dev
+
 # Install as a service
 
 * Run these commands:
